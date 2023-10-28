@@ -2,19 +2,11 @@ import os
 
 import numpy as np
 import pandas as pd
-import rampwf as rw
 from sklearn.model_selection import TimeSeriesSplit
 
 problem_title = "Bike count prediction"
 _target_column_name = "log_bike_count"
 # A type (class) which will be used to create wrapper objects for y_pred
-Predictions = rw.prediction_types.make_regression()
-# An object implementing the workflow
-workflow = rw.workflows.EstimatorExternalData()
-
-score_types = [
-    rw.score_types.RMSE(name="rmse", precision=3),
-]
 
 
 def get_cv(X, y, random_state=0):
