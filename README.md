@@ -40,7 +40,7 @@ Get started on this challenge with the
 Launch the notebook using:
 
 ```bash
-jupyter notebook ./bike_counters_starting_kit.ipynb
+jupyter lab ./bike_counters_starting_kit.ipynb
 ```
 
 ### Submissions
