@@ -1,22 +1,17 @@
 # Starting kit on the bike counters dataset
 
-![GH Actions](https://github.com/ramp-kits/bike_counters/actions/workflows/main.yml/badge.svg)
+Read the instruction from the [Kaggle challenge](https://www.kaggle.com/competitions/mdsb-2023/overview).
 
-## Getting started
+### Download the data
 
-### Download the data,
+Download the data from Kaggle and put the files into the `data` folder.
 
-Download the data files,
- - [train.parquet](https://github.com/ramp-kits/bike_counters/releases/download/v0.1.0/train.parquet)
- - [test.parquet](https://github.com/ramp-kits/bike_counters/releases/download/v0.1.0/test.parquet)
+Note that your goal is to train your model on `train.parquet` (and eventual external datasets)
+and then make predictions on `final_test.parquet`.
 
-and put them into into the data folder.
+### Install the local environment
 
-Note that the `test.parquet` file is different from the actual `final_test.parquet` used for the evaluation on Kaggle. This file is just here for convenience.
-
-### Install
-
-To run the notebook you will need the dependencies listed
+To run the notebook locally you will need the dependencies listed
 in `requirements.txt`. 
 
 It is recommended to create a new virtual environement for this project. For instance, with conda,
@@ -28,23 +23,26 @@ conda activate bikes-count
 You can install the dependencies with the following command-line:
 
 ```bash
-pip install -U -r requirements.txt
+pip install -r requirements.txt -U
 ```
 
+### The starter notebook
 
-### Challenge description
-
-Get started on this challenge with the
-[dedicated notebook](bike_counters_starting_kit.ipynb).
+Get started on this challenge with the `bike_counters_starting_kit.ipynb` notebook.
+This notebook is just a helper to show you different methods and ideas useful for your
+exploratory notebooks and your submission script.
 
 Launch the notebook using:
 
 ```bash
-jupyter lab ./bike_counters_starting_kit.ipynb
+jupyter lab bike_counters_starting_kit.ipynb
 ```
 
 ### Submissions
 
 Upload your script file `.py` to Kaggle using the Kaggle interface directly.
-The platform will then execute your code to generate your submission csv file, and compute your score.
-Note that your submission .csv file must have the columns "Id" and "bike_log_count", and be of the same length as `final_test.parquet`.
+The platform will then execute your code to generate your submission csv file,
+and compute your score.
+
+Note that your submission .csv file must have the columns "Id" and "bike_log_count",
+and be of the same length as `final_test.parquet`.
