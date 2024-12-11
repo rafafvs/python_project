@@ -6,3 +6,7 @@ scikit-learn
 folium
 ipython
 jupyterlab
+skrub
+holidays
+nbqa
+black
