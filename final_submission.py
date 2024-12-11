@@ -28,7 +28,6 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor, HistGradientBoostingRegressor
 from sklearn.neighbors import KNeighborsRegressor
 
-
 # Import the data (Training data)
 train_data = pd.read_parquet(Path("data") / "train.parquet") # Train data
 train_data.set_index("date", inplace=True) # Set date as the index
@@ -93,10 +92,12 @@ X_train, X_test, y_train, y_test = train_test_split(
 # Fit the model
 model.fit(X_train, y_train)
 
+# Import the test data
 test_data = pd.read_parquet(Path("data") / "final_test.parquet")
 test_data_merged = test_data.merge(external_data_resampled, on="date", how="inner")
 test_data_merged = utils._encode_dates(test_data_merged)[X.columns]
 
+# Create the csv file for submission
 submission = model.predict(test_data_merged[X.columns])
 pd.Series(submission).to_frame().rename_axis("Id").rename(
     columns={0: "log_bike_count"}
